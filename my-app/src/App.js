@@ -31,8 +31,9 @@ function App() {
   ];
   return (
     <div>
-      <NewExpense addExpenseHandler={addExpenseHandler}></NewExpense>
-      <Expenses expenses={expenses}></Expenses>
+      {/* <NewExpense addExpenseHandler={addExpenseHandler}></NewExpense>
+      <Expenses expenses={expenses}></Expenses> */}
+      Hello
     </div>
   );
 }
