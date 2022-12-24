@@ -1,8 +1,13 @@
 import "./App.css";
-import ExpenseItem from "./components/ExpenseItem";
-import Expenses from "./components/Expenses";
+// import ExpenseItem from "./components/ExpenseItem";
+import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 function App() {
+  const addExpenseHandler = (expense) => {
+    console.log("In APp");
+    console.log(expense);
+  };
   const expenses = [
     {
       id: "e1",
@@ -26,6 +31,7 @@ function App() {
   ];
   return (
     <div>
+      <NewExpense addExpenseHandler={addExpenseHandler}></NewExpense>
       <Expenses expenses={expenses}></Expenses>
     </div>
   );
