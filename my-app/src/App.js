@@ -1,9 +1,18 @@
+import { useState } from "react";
 import "./App.css";
+import DataDisplay from "./components/DataDisplay";
 // import ExpenseItem from "./components/ExpenseItem";
 import Expenses from "./components/Expenses/Expenses";
+import InputForm from "./components/InputForm";
 import NewExpense from "./components/NewExpense/NewExpense";
 
 function App() {
+  const [tableData, setTableData] = useState("");
+  const handleOnSubmit = (insertedData) => {
+    const inserts = { ...insertedData };
+    setTableData(inserts);
+    return;
+  };
   const addExpenseHandler = (expense) => {
     console.log("In APp");
     console.log(expense);
@@ -33,7 +42,8 @@ function App() {
     <div>
       {/* <NewExpense addExpenseHandler={addExpenseHandler}></NewExpense>
       <Expenses expenses={expenses}></Expenses> */}
-      Hello
+      <InputForm handleOnSubmit={handleOnSubmit}></InputForm>
+      <DataDisplay tableData={tableData}></DataDisplay>
     </div>
   );
 }
