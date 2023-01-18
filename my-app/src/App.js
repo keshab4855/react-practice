@@ -8,7 +8,12 @@ import SiriImage from "./images/siri.png";
 function App() {
   return (
     <div>
-      <div>Personal Digital Assistance</div>
+      <section className="hero is-primary">
+        <div className="hero-body">
+          <p className="title">Personal Digital Assistance</p>
+        </div>
+      </section>
+
       <div className="container">
         <section className="section">
           <div className="columns">
