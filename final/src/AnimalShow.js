@@ -18,9 +18,14 @@ const AnimalShow = ({ type }) => {
     setClicks(clicks + 1);
   };
   return (
-    <div onClick={handleOnClick}>
-      {<img src={svgMap[type]} alt="" />}
-      <img src={heart} style={{ width: 10 + 10 * clicks }} alt="" />
+    <div className="animal-show" onClick={handleOnClick}>
+      {<img className="animal" src={svgMap[type]} alt="" />}
+      <img
+        className="heart"
+        src={heart}
+        style={{ width: 10 + 10 * clicks }}
+        alt=""
+      />
     </div>
   );
 };

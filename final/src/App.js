@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="app">
       <button onClick={handleOnClick}>Add Animal</button>
-      <div>{renderedAnimals}</div>
+      <div className="animal-list">{renderedAnimals}</div>
     </div>
   );
 }
