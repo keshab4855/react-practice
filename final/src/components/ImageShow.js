@@ -1,7 +1,11 @@
 import React from "react";
 
-const ImageShow = () => {
-  return <div>ImageShow</div>;
+const ImageShow = ({ item }) => {
+  return (
+    <div>
+      <img src={item.urls.small} alt="" />
+    </div>
+  );
 };
 
 export default ImageShow;
