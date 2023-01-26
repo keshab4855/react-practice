@@ -13,11 +13,12 @@ const BookCreate = ({ createBook }) => {
   };
 
   return (
-    <div>
+    <div className="book-create">
+      <h3>Add a Book</h3>
       <form action="" type="submit" onSubmit={submitHandler}>
         <label htmlFor="">Title</label>
         <input onChange={changeHandler} value={title} type="text" />
-        <button>Submit</button>
+        <button className="button">Create</button>
       </form>
     </div>
   );
