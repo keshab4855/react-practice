@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import BookEdit from "./BookEdit";
 
-const BookShow = ({ item, deleteBookById }) => {
+const BookShow = ({ item, deleteBookById, editBookById }) => {
   const [showEdit, setShowEdit] = useState(false);
   const deleteHandler = () => {
     deleteBookById(item.id);
@@ -13,7 +13,7 @@ const BookShow = ({ item, deleteBookById }) => {
 
   let content = <h3>{item.title}</h3>;
   if (showEdit) {
-    content = <BookEdit item={item}></BookEdit>;
+    content = <BookEdit item={item} editBookById={editBookById}></BookEdit>;
   }
 
   return (

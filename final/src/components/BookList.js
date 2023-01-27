@@ -1,13 +1,14 @@
 import React from "react";
 import BookShow from "./BookShow";
 
-const BookList = ({ books, deleteBookById }) => {
+const BookList = ({ books, deleteBookById, editBookById }) => {
   const renderedBooks = books.map((item, i) => {
     return (
       <BookShow
         key={item.id}
         item={item}
         deleteBookById={deleteBookById}
+        editBookById={editBookById}
       ></BookShow>
     );
   });
