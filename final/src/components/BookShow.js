@@ -13,13 +13,13 @@ const BookShow = ({ item, deleteBookById }) => {
 
   let content = <h3>{item.title}</h3>;
   if (showEdit) {
-    content = <BookEdit></BookEdit>;
+    content = <BookEdit item={item}></BookEdit>;
   }
 
   return (
     <div className="book-show">
       <div>{content}</div>
-      {item.title}
+      {/* {item.title} */}
       <div className="actions">
         <button className="edit" onClick={editHandler}>
           Edit
