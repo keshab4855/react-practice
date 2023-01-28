@@ -11,9 +11,14 @@ const BookShow = ({ item, deleteBookById, editBookById }) => {
     setShowEdit(!showEdit);
   };
 
+  const handleSubmit = (id, newTitle) => {
+    setShowEdit(false);
+    editBookById(id, newTitle);
+  };
+
   let content = <h3>{item.title}</h3>;
   if (showEdit) {
-    content = <BookEdit item={item} editBookById={editBookById}></BookEdit>;
+    content = <BookEdit item={item} handleSubmit={handleSubmit}></BookEdit>;
   }
 
   return (
