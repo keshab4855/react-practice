@@ -23,6 +23,7 @@ const BookShow = ({ item, deleteBookById, editBookById }) => {
 
   return (
     <div className="book-show">
+      <img src={`https://picsum.photos/seed/${item.id}/300/200`} alt="books" />
       <div>{content}</div>
       {/* {item.title} */}
       <div className="actions">
