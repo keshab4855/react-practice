@@ -1,6 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
+import className from "classnames";
 
+const finalClassName = className({
+  "bg-blue-500": true,
+});
+console.log(finalClassName);
 const Button = ({
   children,
   primary,
@@ -11,7 +15,15 @@ const Button = ({
   outline,
   rounded,
 }) => {
-  return <button>{children}</button>;
+  let baseClassName = "px-3 py-1.5 border 	";
+  if (primary) {
+    baseClassName += "bg-blue-500 border-blue-500 text-white";
+  }
+  return (
+    <button className="px-3 py-1.5 border border-blue-600 bg-blue-500 text-white mb-3	">
+      {children}
+    </button>
+  );
 };
 Button.propTypes = {
   checkVariationValue: ({ primary, secondary, success, warning, danger }) => {
