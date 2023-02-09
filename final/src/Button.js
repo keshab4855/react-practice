@@ -15,15 +15,15 @@ const Button = ({
   outline,
   rounded,
 }) => {
-  let baseClassName = "px-3 py-1.5 border 	";
-  if (primary) {
-    baseClassName += "bg-blue-500 border-blue-500 text-white";
-  }
-  return (
-    <button className="px-3 py-1.5 border border-blue-600 bg-blue-500 text-white mb-3	">
-      {children}
-    </button>
-  );
+  const classes = className("px-3 py-1.5 border", {
+    "border-blue-600 bg-blue-500 text-white": primary,
+    "border-gray-600 bg-gray-500 text-white": secondary,
+    "border-green-600 bg-green-500 text-white": success,
+    "border-orange-600 bg-orange-500 text-white": warning,
+    "border-red-600 bg-red-500 text-white": danger,
+  });
+
+  return <button className={classes}>{children}</button>;
 };
 Button.propTypes = {
   checkVariationValue: ({ primary, secondary, success, warning, danger }) => {
