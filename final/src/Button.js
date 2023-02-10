@@ -21,6 +21,7 @@ const Button = ({
     "border-green-600 bg-green-500 text-white": success,
     "border-orange-600 bg-orange-500 text-white": warning,
     "border-red-600 bg-red-500 text-white": danger,
+    "rounded-full": rounded,
   });
 
   return <button className={classes}>{children}</button>;
