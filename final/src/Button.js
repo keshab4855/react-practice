@@ -22,6 +22,7 @@ const Button = ({
     "border-orange-600 bg-orange-500 text-white": warning,
     "border-red-600 bg-red-500 text-white": danger,
     "rounded-full": rounded,
+    "bg-white": outline,
   });
 
   return <button className={classes}>{children}</button>;
