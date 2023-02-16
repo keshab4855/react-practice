@@ -1,5 +1,16 @@
+import { useState } from "react";
+import CounterPage from "./components/CounterPage";
+
 function App() {
-  return <div>hello</div>;
+  const [count, setCount] = useState(0);
+  const handleOnSubmit = (updatedCount) => {
+    setCount(updatedCount);
+  };
+  return (
+    <div>
+      <CounterPage count={count} handleOnSubmit={handleOnSubmit} />
+    </div>
+  );
 }
 
 export default App;
