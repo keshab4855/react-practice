@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 const CounterPage = ({ count, handleOnSubmit }) => {
-  const [valueToAdd, setValueToAdd] = useState(0);
+  // const [valueToAdd, setValueToAdd] = useState(0);
   const increment = () => {
     const updatedCount = count + 1;
     return handleOnSubmit(updatedCount);
@@ -15,13 +15,13 @@ const CounterPage = ({ count, handleOnSubmit }) => {
   const handleChange = (e) => {
     const finalValue = parseInt(e.target.value);
 
-    setValueToAdd(finalValue);
+    // setValueToAdd(finalValue);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleOnSubmit(count + valueToAdd);
-    setValueToAdd(0);
+    // handleOnSubmit(count + valueToAdd);
+    // setValueToAdd(0);
   };
   return (
     <div>
