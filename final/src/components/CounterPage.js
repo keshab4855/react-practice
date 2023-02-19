@@ -1,8 +1,13 @@
 import React from "react";
+import { useReducer } from "react";
 import { useState } from "react";
 
 const CounterPage = ({ count, handleOnSubmit }) => {
   // const [valueToAdd, setValueToAdd] = useState(0);
+  const [state, dispatch] = useReducer(reducer, {
+    count: count,
+    valueToAdd: 0,
+  });
   const increment = () => {
     const updatedCount = count + 1;
     return handleOnSubmit(updatedCount);
