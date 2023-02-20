@@ -1,7 +1,12 @@
 import React from "react";
 import { useReducer } from "react";
-import { useState } from "react";
 
+const reducer = (state, action) => {
+  return {
+    ...state,
+    count: state.count + 1,
+  };
+};
 const CounterPage = ({ count, handleOnSubmit }) => {
   // const [valueToAdd, setValueToAdd] = useState(0);
   const [state, dispatch] = useReducer(reducer, {
@@ -9,8 +14,9 @@ const CounterPage = ({ count, handleOnSubmit }) => {
     valueToAdd: 0,
   });
   const increment = () => {
-    const updatedCount = count + 1;
-    return handleOnSubmit(updatedCount);
+    // const updatedCount = count + 1;
+    // return handleOnSubmit(updatedCount);
+    dispatch();
   };
   const decrement = () => {
     const updatedCount = count - 1;
@@ -31,14 +37,18 @@ const CounterPage = ({ count, handleOnSubmit }) => {
   return (
     <div>
       <div>
-        <h1>Count is {count}</h1>
+        <h1>Count is {state.count}</h1>
         <button onClick={increment}>Increment</button>
         <button onClick={decrement}>Decrement</button>
       </div>
       <hr />
       <form onSubmit={handleSubmit}>
         <label htmlFor="">Add a lot!</label>
-        <input value={valueToAdd || ""} onChange={handleChange} type="number" />
+        <input
+          value={state.valueToAdd || ""}
+          onChange={handleChange}
+          type="number"
+        />
         <button>Add it</button>
       </form>
     </div>
