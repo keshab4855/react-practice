@@ -2,21 +2,29 @@ import React from "react";
 import { useReducer } from "react";
 
 const reducer = (state, action) => {
-  return {
-    ...state,
-    count: state.count + 1,
-  };
+  if (action.type === "increment") {
+    return {
+      ...state,
+      count: state.count + 1,
+    };
+  }
+  if (action.type === "change-value-to-add") {
+    return {
+      ...state,
+      valueToAdd: action.payload,
+    };
+  }
+  return state;
 };
 const CounterPage = ({ count, handleOnSubmit }) => {
-  // const [valueToAdd, setValueToAdd] = useState(0);
   const [state, dispatch] = useReducer(reducer, {
     count: count,
     valueToAdd: 0,
   });
   const increment = () => {
-    // const updatedCount = count + 1;
-    // return handleOnSubmit(updatedCount);
-    dispatch();
+    dispatch({
+      type: "increment",
+    });
   };
   const decrement = () => {
     const updatedCount = count - 1;
@@ -26,7 +34,10 @@ const CounterPage = ({ count, handleOnSubmit }) => {
   const handleChange = (e) => {
     const finalValue = parseInt(e.target.value);
 
-    // setValueToAdd(finalValue);
+    dispatch({
+      type: "change-value-to-add",
+      payload: finalValue,
+    });
   };
 
   const handleSubmit = (e) => {
